@@ -1,0 +1,31 @@
+<p *ngIf="isVisible; else condicaoFalsa">
+  {{ aluno?.dados?.nome}}
+</p>
+
+<ng-template #condicaoFalsa>
+  <p>Outro Texto</p>
+</ng-template>
+
+<div [ngSwitch]="myValue">
+  <span *ngSwitchCase="1">Valor 1</span>
+  <span *ngSwitchCase="2">Valor 2</span>
+  <span *ngSwitchCase="3">Valor 3</span>
+  <span *ngSwitchCase="">Valor Padrão</span>
+</div>
+
+<ul>
+  <li *ngFor="let item of myList">Item {{item}}</li>
+</ul>
+
+<ul>
+  <li *ngFor="let aluno of alunos">Nome: {{aluno.nome}}</li>
+</ul>
+
+
+<input type="text" [(ngModel)]="searchText" (keyup.enter)="getProjects()"/>
+
+<ul>
+  <li *ngFor="let project of projects">
+    Nome: {{ project.full_name }}
+  </li>
+</ul>
